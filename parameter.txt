@@ -1,0 +1,17 @@
+println "URL: ${argUrl}"
+def folderName=(argUrl =~ /https:\/\/[^\/]+\/[^\/]+\/(.*).git/)[0][1]
+
+
+
+pipeline {
+    agent any
+        stages {
+            stage('Git clone') {
+                    steps {
+                        dir (folderName){
+                        git url:argUrl
+                        }
+                    }
+                }
+            }
+}
