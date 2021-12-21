@@ -1,0 +1,12 @@
+pipeline{
+    agent{
+        docker {image "groovy:latest"}
+    }
+    stages{
+        stage("Installing groovy"){
+            steps{
+                sh "groovy --version"
+            }
+        }
+    }
+}
