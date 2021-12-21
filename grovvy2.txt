@@ -1,0 +1,17 @@
+pipeline{
+    agent any
+    stages{
+        stage('Git clone'){
+            steps{
+                git branch:"master", url:"https://github.com/iGom-ravi/gradle.git"
+            }
+        }
+    }
+    post {
+           always {
+                 mail to: "rsgomathy@gmail.com", subject: "working",
+                body: "testing"
+            }
+            
+        }
+}
