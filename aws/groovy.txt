@@ -1,0 +1,9 @@
+pipeline('private-repo'){
+  definition{
+    cpsScm{
+      lightweight(){
+        github('iGom-ravi/training-day4','master')
+}
+    }
+  }
+}
